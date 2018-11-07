@@ -172,19 +172,19 @@ class DataShare:
 
         # 7. 비정상 제어봉 제어능을 계산
         if para.AbnormalRodName == 'C':
-            AbnormalRodWorth = para.BankWorth_C / 8
+            AbnormalRodWorth = para.BankWorth_C / 8 * para.AbnormalRodNumber
             print(AbnormalRodWorth)
             subdata.append(AbnormalRodWorth)
         elif para.AbnormalRodName == 'A':
-            AbnormalRodWorth = para.BankWorth_A / 8
+            AbnormalRodWorth = para.BankWorth_A / 8 * para.AbnormalRodNumber
             print(AbnormalRodWorth)
             subdata.append(AbnormalRodWorth)
         elif para.AbnormalRodName == 'B':
-            AbnormalRodWorth = para.BankWorth_B / 8
+            AbnormalRodWorth = para.BankWorth_B / 8 * para.AbnormalRodNumber
             print(AbnormalRodWorth)
             subdata.append(AbnormalRodWorth)
         elif para.AbnormalRodName == 'D':
-            AbnormalRodWorth = para.BankWorth_D / 8
+            AbnormalRodWorth = para.BankWorth_D / 8 * para.AbnormalRodNumber
             print(AbnormalRodWorth)
             subdata.append(AbnormalRodWorth)
 

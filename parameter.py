@@ -17,6 +17,7 @@ class para:
     BankWorth_B = 1810 # H
     BankWorth_A = 760 # H
     AbnormalRodName = 'C' # T
+    AbnormalRodNumber = 1 # T
     ShutdownMarginValue = 1770 # H
 
     # H : Hold Value
