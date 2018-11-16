@@ -87,18 +87,20 @@ class DataShare:
         self.ax2.clear()
 
         # 4. 그래프 업데이트.
-        self.ax1.plot(self.list_mem_number, self.result, label='Result', linewidth=1)
+        self.ax1.set_title('Shutdown Monitoring', fontsize=15)
+        self.ax1.plot(self.list_mem_number, self.shut, label= 'Shutdown Margin', linewidth=1)
         self.ax1.legend(loc='upper right', ncol=5, fontsize=10)
-        self.ax1.set_ylim(0, 1.1)
-        self.ax1.set_xlabel('Time')
-        self.ax1.set_ylabel('Monitoring Result')
+        self.ax1.set_ylim(0, 6000)
+        self.ax1.axhline(y=1770, ls='--', color='r', linewidth=1.5)
+        self.ax1.set_yticks([2000, 4000, 6000])
+        self.ax1.set_yticklabels(['2000[pcm]', '4000[pcm]', '6000[pcm]'], fontsize=8)
 
-        self.ax2.plot(self.list_mem_number, self.shut, linewidth=1)
+        self.ax2.set_title('LCO 3.1.1 Monitoring', fontsize=15)
+        self.ax2.plot(self.list_mem_number, self.result, label='Result', linewidth=1)
         self.ax2.legend(loc='upper right', ncol=5, fontsize=10)
-        self.ax2.set_ylim(0, 6000)
-        self.ax2.axhline(y=1770, ls='--',color='r',linewidth=1)
-        self.ax2.set_xlabel('Time')
-        self.ax2.set_ylabel('ShutdownMargin')
+        self.ax2.set_ylim(-0.1, 1.1)
+        self.ax2.set_yticks([0, 1])
+        self.ax2.set_xlabel('Time (s)')
 
         self.fig.tight_layout()
 
